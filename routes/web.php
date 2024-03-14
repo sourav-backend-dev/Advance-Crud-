@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -28,3 +29,8 @@ Route::get('edit', [ProjectController::class, 'edit'])->name('projects.edit');
 Route::post('update', [ProjectController::class, 'update'])->name('projects.update');
 // Route::get('sort/{page}', [ProjectController::class, 'sort'])->name('projects.sort');
 Route::get('filters', [ProjectController::class, 'filters'])->name('projects.filters');
+
+
+//contact form submittion 
+Route::get('contact-us', [ContactController::class, 'index']);
+Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
